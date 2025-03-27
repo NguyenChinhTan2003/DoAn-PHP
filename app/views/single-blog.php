@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 	<title>Game Warrior Template</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Game Warrior Template">
 	<meta name="keywords" content="warrior, game, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon" />
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/animate.css" />
 
 
 	<!--[if lt IE 9]>
@@ -26,6 +27,7 @@
 	<![endif]-->
 
 </head>
+
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder">
@@ -40,7 +42,7 @@
 				<img src="img/logo.png" alt="">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+				<a href="#">Login</a> / <a href="#">Register</a>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
@@ -106,7 +108,7 @@
 					<div class="blog-content">
 						<h3>Genji: Suspendisse ut justo tem porrutrum</h3>
 						<a href="" class="meta-comment">3 comment</a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque id nibh ac congue. Nullam dignissim egestas velit eget tempor. Morbi nec dolor neque. Maecenas quis tincidunt turpis. Cras ultricies pulvinar odio, sit amet lobortis lorem consectetur at. Vivamus risus erat, eleifend a nunc non, lacinia ultrices ante. Suspendisse a lacus at metus convallis maximus. Vivamus fringilla ipsum dolor. Cras pellentesque turpis id lacus condimentum condimentum. Sed tincidunt velit et urna eleifend imperdiet. Quisque euismod nibh at urna pellentesque, sit amet bibendum nibh fringilla. Sed dignissim varius blandit.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque id nibh ac congue. Nullam dignissim egestas velit eget tempor. Morbi nec dolor neque. Maecenas quis tincidunt turpis. Cras ultricies pulvinar odio, sit amet lobortis lorem consectetur at. Vivamus risus erat, eleifend a nunc non, lacinia ultrices ante. Suspendisse a lacus at metus convallis maximus. Vivamus fringilla ipsum dolor. Cras pellentesque turpis id lacus condimentum condimentum. Sed tincidunt velit et urna eleifend imperdiet. Quisque euismod nibh at urna pellentesque, sit amet bibendum nibh fringilla. Sed dignissim varius blandit.</p>
 						<p>Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. Aenean lectus felis, rutrum non quam eu, accumsan semper ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan, mauris nec venenatis gravida, lacus est gravida augue, eu egestas lorem nisi nec nibh. Mauris luctus porttitor elit, ac efficitur nulla consectetur a. Pellentesque scelerisque pulvinar magna sit amet auctor. Fusce tincidunt convallis elit ante, nec ullamcorper ante rhoncus mollis. </p>
 					</div>
 					<div class="comment-warp">
@@ -300,28 +302,28 @@
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
 								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
 								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
+									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
@@ -333,7 +335,7 @@
 	</section>
 	<!-- Footer top section end -->
 
-	
+
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
@@ -345,9 +347,11 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
+				Copyright &copy;<script>
+					document.write(new Date().getFullYear());
+				</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
 		</div>
 	</footer>
 	<!-- Footer section end -->
@@ -359,5 +363,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.marquee.min.js"></script>
 	<script src="js/main.js"></script>
-    </body>
+</body>
+
 </html>
