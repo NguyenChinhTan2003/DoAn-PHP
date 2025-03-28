@@ -2,30 +2,23 @@
 <html lang="en">
 
 <head>
-	<title>Game Warrior Template</title>
+	<title>Game Warrior</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Game Warrior Template">
 	<meta name="keywords" content="warrior, game, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon" />
+	<link href="public/img/favicon.ico" rel="shortcut icon" />
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-
-
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+	<link rel="stylesheet" href="public/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="public/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="public/css/owl.carousel.css" />
+	<link rel="stylesheet" href="public/css/style.css" />
+	<link rel="stylesheet" href="public/css/animate.css" />
 </head>
 
 <body>
@@ -39,7 +32,7 @@
 		<div class="container">
 			<!-- logo -->
 			<a class="site-logo" href="index.html">
-				<img src="img/logo.png" alt="">
+				<img src="public/img/logo.png" alt="">
 			</a>
 			<div class="user-panel">
 				<a href="#">Login</a> / <a href="#">Register</a>
@@ -78,7 +71,7 @@
 
 
 	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/4.jpg">
+	<section class="page-info-section set-bg" data-setbg="public/img/page-top-bg/4.jpg">
 		<div class="pi-content">
 			<div class="container">
 				<div class="row">
@@ -94,7 +87,7 @@
 
 
 	<!-- Page section -->
-	<section class="page-section community-page set-bg" data-setbg="img/community-bg.jpg">
+	<section class="page-section community-page set-bg" data-setbg="public/img/community-bg.jpg">
 		<div class="community-warp spad">
 			<div class="container">
 				<div class="row">
@@ -114,7 +107,7 @@
 				<ul class="community-post-list">
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/1.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/1.jpg"></div>
 							<div class="post-content">
 								<h5>James Smith<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -124,20 +117,20 @@
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/8.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/8.jpg"></div>
 							<div class="post-content">
 								<h5>Partik Williams<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
 								<p>Lorem ipsum dolor sit amet, cdictum nisl onsectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. </p>
 								<div class="attachment-file">
-									<img src="img/attachment.jpg" alt="">
+									<img src="public/img/attachment.jpg" alt="">
 								</div>
 							</div>
 						</div>
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/5.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/5.jpg"></div>
 							<div class="post-content">
 								<h5>Cris The Man<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -147,7 +140,7 @@
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/1.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/1.jpg"></div>
 							<div class="post-content">
 								<h5>James Smith<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -157,7 +150,7 @@
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/4.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/4.jpg"></div>
 							<div class="post-content">
 								<h5>Cris The Man<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -167,7 +160,7 @@
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/6.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/6.jpg"></div>
 							<div class="post-content">
 								<h5>James Smith<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -177,7 +170,7 @@
 					</li>
 					<li>
 						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/7.jpg"></div>
+							<div class="author-avator set-bg" data-setbg="public/img/authors/7.jpg"></div>
 							<div class="post-content">
 								<h5>Maria Doe<span>posted an update</span></h5>
 								<div class="post-date">June 21, 2018</div>
@@ -201,12 +194,12 @@
 	<section class="footer-top-section">
 		<div class="container">
 			<div class="footer-top-bg">
-				<img src="img/footer-top-bg.png" alt="">
+				<img src="public/img/footer-top-bg.png" alt="">
 			</div>
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="footer-logo text-white">
-						<img src="img/footer-logo.png" alt="">
+						<img src="public/img/footer-logo.png" alt="">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
 					</div>
 				</div>
@@ -215,7 +208,7 @@
 						<h4 class="fw-title">Latest Posts</h4>
 						<div class="latest-blog">
 							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
+								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/1.jpg"></div>
 								<div class="lb-content">
 									<div class="lb-date">June 21, 2018</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
@@ -223,7 +216,7 @@
 								</div>
 							</div>
 							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
+								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/2.jpg"></div>
 								<div class="lb-content">
 									<div class="lb-date">June 21, 2018</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
@@ -231,7 +224,7 @@
 								</div>
 							</div>
 							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
+								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/3.jpg"></div>
 								<div class="lb-content">
 									<div class="lb-date">June 21, 2018</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
@@ -246,28 +239,28 @@
 						<h4 class="fw-title">Top Comments</h4>
 						<div class="top-comment">
 							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
+								<div class="tc-thumb set-bg" data-setbg="public/img/authors/1.jpg"></div>
 								<div class="tc-content">
 									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
+								<div class="tc-thumb set-bg" data-setbg="public/img/authors/2.jpg"></div>
 								<div class="tc-content">
 									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
+								<div class="tc-thumb set-bg" data-setbg="public/img/authors/3.jpg"></div>
 								<div class="tc-content">
 									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
 								</div>
 							</div>
 							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
+								<div class="tc-thumb set-bg" data-setbg="public/img/authors/4.jpg"></div>
 								<div class="tc-content">
 									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
 									<div class="tc-date">June 21, 2018</div>
@@ -304,11 +297,11 @@
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.marquee.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="public/js/jquery-3.2.1.min.js"></script>
+	<script src="public/js/bootstrap.min.js"></script>
+	<script src="public/js/owl.carousel.min.js"></script>
+	<script src="public/js/jquery.marquee.min.js"></script>
+	<script src="public/js/main.js"></script>
 </body>
 
 </html>
