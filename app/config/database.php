@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "database";
+    private $db_name = "game_news";
     private $username = "root";
     private $password = "";
     public $conn;

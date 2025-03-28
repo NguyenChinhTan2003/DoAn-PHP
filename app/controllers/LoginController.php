@@ -17,7 +17,7 @@ class LoginController {
                 ];
 
                 // Chuyển hướng
-                header('Location: index.php?action=nhanvien');
+                header('Location: index.php?action=index');
                 exit();
             } else {
                 echo "<script>alert('Sai tài khoản hoặc mật khẩu!');</script>";
@@ -29,7 +29,7 @@ class LoginController {
 
     public function logout() {
         session_destroy();
-        header('Location: index.php?action=login');
+        header('Location: index.php?action=index');
         exit();
     }
 
