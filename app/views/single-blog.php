@@ -35,7 +35,13 @@
 				<img src="public/img/logo.png" alt="">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a> / <a href="#">Register</a>
+				<?php if (isset($_SESSION['user'])) : ?>
+					<span>Xin chào, <b><?php echo $_SESSION['user']['fullname']; ?></b>!</span>
+					<a href="index.php?action=logout" class="logout-btn">Đăng xuất</a>
+				<?php else : ?>
+					<a href="index.php?action=login">Login</a> /
+					<a href="index.php?action=register">Register</a>
+				<?php endif; ?>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">

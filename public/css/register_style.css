@@ -1,6 +1,3 @@
-/* public/css/style.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,46 +5,47 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e6f2 100%); /* Gradient sáng */
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x1080?text=Game+Background') no-repeat center/cover;
+    opacity: 0.1;
+    z-index: -1;
 }
 
 .form-container {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    background: rgba(20, 20, 30, 0.9);
+    border: 2px solid #ff0048;
+    border-radius: 15px;
     padding: 40px;
     width: 100%;
-    max-width: 500px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-in-out;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(255, 0, 72, 0.5), inset 0 0 10px rgba(255, 0, 72, 0.2);
+    animation: fadeIn 1s ease-in-out;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     text-align: center;
-    color: #2c3e50;
+    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     margin-bottom: 30px;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #ab47bc, #e1bee7); /* Gradient tím nhạt */
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+    text-shadow: 0 0 10px #ff0048, 0 0 20px #ff0048;
 }
 
 .register-form {
@@ -64,70 +62,121 @@ h2::after {
 
 .form-group label {
     font-size: 1.1em;
-    color: #555;
-    font-weight: 500;
+    color: #ff0048;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 0, 72, 0.5);
 }
 
 .form-group input,
 .form-group select {
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
+    border: 2px solid #ff0048;
+    border-radius: 8px;
     font-size: 1em;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
     outline: none;
     transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #ab47bc; /* Tím nhạt */
-    box-shadow: 0 0 10px rgba(171, 71, 188, 0.2);
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
     transform: scale(1.02);
 }
 
 .form-group select {
-    background: #fff;
-    cursor: pointer;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 40px;
+    background: rgba(255, 255, 255, 0.05) url('data:image/svg+xml;utf8,<svg fill="%23ff0048" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
 }
 
 .btn-register {
-    background: linear-gradient(45deg, #ab47bc, #e1bee7); /* Gradient tím nhạt */
+    background: linear-gradient(45deg, #ff0048, #ff6699);
     color: #fff;
     padding: 12px;
     border: none;
     border-radius: 50px;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-size: 1.2em;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 5px 20px rgba(171, 71, 188, 0.3);
-    animation: bounceIn 1s ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    animation: pulse 2s infinite;
 }
 
 .btn-register:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(171, 71, 188, 0.5);
-    background: linear-gradient(45deg, #e1bee7, #ab47bc);
+    box-shadow: 0 0 30px rgba(255, 0, 72, 0.8);
+    background: linear-gradient(45deg, #ff6699, #ff0048);
 }
 
-/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 72, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    }
 }
 
-@keyframes bounceIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); }
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --select-bg: #e0e0e0;
+    --select-text: #000000;
+}
+
+/* Chế độ tối */
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --select-bg: #0d0d1a;
+    --select-text: #ffffff;
+}
+
+/* Áp dụng màu vào các thành phần */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+select {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+    border: 2px solid var(--text-color);
+}
+
+option {
+    background-color: var(--select-bg);
+    color: var(--select-text);
 }

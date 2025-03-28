@@ -8,16 +8,15 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%); /* Gradient tối, đậm chất game */
+    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    overflow: hidden; /* Ngăn scroll không cần thiết */
+    overflow: hidden;
 }
 
-/* Hiệu ứng nền (tùy chọn) */
 body::before {
     content: '';
     position: absolute;
@@ -26,18 +25,18 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://via.placeholder.com/1920x1080?text=Game+Background') no-repeat center/cover;
-    opacity: 0.1; /* Làm mờ nền để không át nội dung */
+    opacity: 0.1;
     z-index: -1;
 }
 
 .login-container {
-    background: rgba(20, 20, 30, 0.9); /* Màu xám đen trong suốt */
-    border: 2px solid #ff0048; /* Viền neon đỏ */
+    background: rgba(20, 20, 30, 0.9);
+    border: 2px solid #ff0048;
     border-radius: 15px;
     padding: 40px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 0 30px rgba(255, 0, 72, 0.5), inset 0 0 10px rgba(255, 0, 72, 0.2); /* Hiệu ứng neon */
+    box-shadow: 0 0 30px rgba(255, 0, 72, 0.5), inset 0 0 10px rgba(255, 0, 72, 0.2);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -48,7 +47,7 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    text-shadow: 0 0 10px #ff0048, 0 0 20px #ff0048; /* Hiệu ứng neon cho chữ */
+    text-shadow: 0 0 10px #ff0048, 0 0 20px #ff0048;
 }
 
 .login-form {
@@ -65,7 +64,7 @@ h2 {
 
 .form-group label {
     font-size: 1.1em;
-    color: #ff0048; /* Đỏ neon */
+    color: #ff0048;
     font-weight: 700;
     text-shadow: 0 0 5px rgba(255, 0, 72, 0.5);
 }
@@ -82,13 +81,13 @@ h2 {
 }
 
 .form-group input:focus {
-    border-color: #00ffcc; /* Xanh neon khi focus */
+    border-color: #00ffcc;
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
     transform: scale(1.02);
 }
 
 .btn-login {
-    background: linear-gradient(45deg, #ff0048, #ff6699); /* Gradient đỏ neon */
+    background: linear-gradient(45deg, #ff0048, #ff6699);
     color: #fff;
     padding: 12px;
     border: none;
@@ -103,7 +102,7 @@ h2 {
 
 .btn-login:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 0, 72,0.8);
+    box-shadow: 0 0 30px rgba(255, 0, 72, 0.8);
     background: linear-gradient(45deg, #ff6699, #ff0048);
 }
 
@@ -111,41 +110,119 @@ h2 {
     text-align: center;
     font-size: 0.95em;
     color: #ccc;
+    margin-top: 20px;
 }
 
 .register-link a {
-    color: #00ffcc; /* Xanh neon */
+    position: relative;
+    color: #00ffcc;
     text-decoration: none;
     font-weight: 700;
+    padding: 2px 5px;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.3);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Hiệu ứng gạch chân động */
+.register-link a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #00ffcc;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.register-link a:hover::after {
+    width: 100%;
 }
 
 .register-link a:hover {
-    color: #ff6699; /* Đỏ nhạt neon */
-    text-shadow: 0 0 10px rgba(255, 102, 153, 0.8);
+    color: #ff6699;
+    text-shadow: 0 0 10px rgba(255, 102, 153, 0.8), 0 0 20px rgba(255, 102, 153, 0.5);
+    transform: scale(1.05);
+    display: inline-block;
 }
 
-/* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 20px rgba(255, 0, 72, 0.5); }
-    50% { box-shadow: 0 0 30px rgba(255, 0, 72, 0.8); }
-    100% { box-shadow: 0 0 20px rgba(255, 0, 72, 0.5); }
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 72, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    }
 }
 
-/* Responsive */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.3);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.8), 0 0 20px rgba(0, 255, 204, 0.5);
+    }
+}
+
 @media (max-width: 480px) {
     .login-container {
         padding: 20px;
         max-width: 100%;
         margin: 0 10px;
     }
+
     h2 {
         font-size: 1.8em;
     }
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --select-bg: #e0e0e0;
+    --select-text: #000000;
+}
+
+/* Chế độ tối */
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --select-bg: #0d0d1a;
+    --select-text: #ffffff;
+}
+
+/* Áp dụng màu vào các thành phần */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+select {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+    border: 2px solid var(--text-color);
+}
+
+option {
+    background-color: var(--select-bg);
+    color: var(--select-text);
 }

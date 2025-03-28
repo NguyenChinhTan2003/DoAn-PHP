@@ -1573,3 +1573,36 @@ ol {
 		font-size: 40px;
 	}
 }
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --select-bg: #e0e0e0;
+    --select-text: #000000;
+}
+
+/* Chế độ tối */
+.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --select-bg: #0d0d1a;
+    --select-text: #ffffff;
+}
+
+/* Áp dụng màu vào các thành phần */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+select {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+    border: 2px solid var(--text-color);
+}
+
+option {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+}
