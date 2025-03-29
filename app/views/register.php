@@ -15,7 +15,7 @@
 
     <div class="form-container">
         <h2>Đăng ký tài khoản</h2>
-        <form method="POST" action="index.php?action=register_process" class="register-form">
+        <form method="POST" action="index.php?action=register" class="register-form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -44,7 +44,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn-register">Register</button>
+            <button type="submit" name="register" class="btn-register">Register</button>
         </form>
     </div>
 </body>

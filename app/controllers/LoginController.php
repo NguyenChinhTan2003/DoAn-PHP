@@ -1,6 +1,8 @@
 <?php
-class LoginController {
-    public function login() {
+class LoginController
+{
+    public function login()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'] ?? '';
             $password = $_POST['password'] ?? '';
@@ -27,31 +29,35 @@ class LoginController {
         include './app/views/login.php';
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_destroy();
         header('Location: index.php?action=index');
         exit();
     }
 
-    public function register() {
+    public function register()
+    {
         require_once './app/models/UserModel.php';
         $model = new UserModel();
-    
+
         if (isset($_POST['register'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
-    
+
             $result = $model->registerUser($username, $password, $fullname, $email);
-    
-            echo $result['message'];
+
             if ($result['status']) {
-                echo '<br><a href="index.php?action=login">Đăng nhập ngay</a>';
+                echo "<script>alert('Đăng ký thành công!'); window.location.href='index.php?action=login';</script>";
+                exit();
+            } else {
+                echo "<script>alert('" . $result['message'] . "'); window.location.href='index.php?action=register';</script>";
+                exit();
             }
         }
-    
+
         require_once './app/views/register.php';
-    }    
+    }
 }
-?>
