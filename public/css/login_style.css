@@ -226,3 +226,47 @@ option {
     background-color: var(--select-bg);
     color: var(--select-text);
 }
+
+/* Định dạng video nền */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Đảm bảo video nằm dưới */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lớp phủ làm mờ video */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Điều chỉnh độ mờ (0.5 là 50%) */
+    z-index: 0; /* Đảm bảo lớp phủ nằm trên video nhưng dưới form */
+}
+
+/* Định dạng form đăng nhập */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8); /* Làm mờ nền */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 72, 0.5);
+    text-align: center;
+    color: white;
+    width: 350px;
+    z-index: 10; /* Đảm bảo form hiển thị trên video */
+}

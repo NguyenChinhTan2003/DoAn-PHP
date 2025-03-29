@@ -5,6 +5,14 @@
     <title>Đăng ký tài khoản</title>
 </head>
 <body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="public/video/BG-2Likes.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video nền.
+        </video>
+    </div>
+    <div class="video-overlay"></div> <!-- Lớp phủ làm mờ video -->
+
     <div class="form-container">
         <h2>Đăng ký tài khoản</h2>
         <form method="POST" action="index.php?action=register_process" class="register-form">

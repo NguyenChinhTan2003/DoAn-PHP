@@ -65,28 +65,15 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="public/img/slider-1.jpg">
+			<div class="hs-item set-bg" data-setbg="public/video/BG-2Likes.mp4">
 				<div class="hs-text">
 					<div class="container">
-						<h2>The Best <span>Games</span> Out There</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="public/img/slider-2.jpg">
-				<div class="hs-text">
-					<div class="container">
-						<h2>The Best <span>Games</span> Out There</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
-						<a href="#" class="site-btn">Read More</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Hero section end -->
-
 
 	<!-- Latest news section -->
 	<div class="latest-news-section">
@@ -431,6 +418,30 @@
 	<script src="public/js/owl.carousel.min.js"></script>
 	<script src="public/js/jquery.marquee.min.js"></script>
 	<script src="public/js/main.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			let videoElements = document.querySelectorAll(".set-bg");
+
+			videoElements.forEach(function(el) {
+				let videoUrl = el.getAttribute("data-setbg");
+				let video = document.createElement("video");
+				video.src = videoUrl;
+				video.autoplay = true;
+				video.loop = true;
+				video.muted = true;
+				video.playsInline = true;
+				video.style.position = "absolute";
+				video.style.width = "100%";
+				video.style.height = "100%";
+				video.style.objectFit = "cover";
+				video.style.top = "0";
+				video.style.left = "0";
+				video.style.zIndex = "-1";
+				el.style.position = "relative";
+				el.prepend(video);
+			});
+		});
+	</script>
 </body>
 
 </html>

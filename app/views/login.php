@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <link rel="stylesheet" href="public/css/login_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
+    <link rel="stylesheet" href="public/css/login_style.css">
 </head>
 <body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="public/video/BG-2Likes.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+
+    <!-- Form đăng nhập -->
     <div class="login-container">
         <h2>Đăng nhập</h2>
         <form method="POST" action="index.php?action=login" class="login-form">
