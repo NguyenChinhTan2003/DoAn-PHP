@@ -1,7 +1,6 @@
 <?php
-session_start(); // Bắt đầu session
+session_start();
 
-// Tự động load tất cả các controller và models khi cần
 spl_autoload_register(function ($class_name) {
     $paths = [
         __DIR__ . "/app/controllers/" . $class_name . ".php",
@@ -17,31 +16,36 @@ spl_autoload_register(function ($class_name) {
     die("❌ Không tìm thấy file: " . $class_name);
 });
 
-// Lấy `controller` và `action` từ URL
 $controllerName = $_GET['controller'] ?? '';
 $action = $_GET['action'] ?? 'index';
 
-// Nếu không có controller nhưng có action = login, register, logout => Chỉ định đúng controller
 if (empty($controllerName)) {
     if (in_array($action, ['login', 'logout', 'register'])) {
         $controllerName = 'login';
     } else {
-        $controllerName = 'home'; // Mặc định là home nếu không khớp
+        $controllerName = 'dashboard';
     }
 }
 
-// Chuyển đổi tên controller thành chuẩn `HomeController`
 $controllerClass = ucfirst($controllerName) . 'Controller';
 $controllerFile = __DIR__ . "/app/controllers/" . $controllerClass . ".php";
 
-// Kiểm tra file controller có tồn tại không
 if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $controller = new $controllerClass();
 
-    // Kiểm tra phương thức (action) có tồn tại trong controller không
     if (method_exists($controller, $action)) {
+        ob_start();
         $controller->$action();
+        $content = ob_get_clean();
+
+        // Chỉ áp dụng layout admin cho các controller thuộc admin
+        $adminControllers = ['News', 'Login', 'Dashboard', 'Category']; // Thêm Category
+        if (in_array(ucfirst($controllerName), $adminControllers)) {
+            require_once __DIR__ . "/app/views/admin/layouts/main.php";
+        } else {
+            echo $content;
+        }
     } else {
         http_response_code(404);
         die("❌ Action `$action` không tồn tại trong $controllerClass");
