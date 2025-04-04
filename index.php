@@ -23,7 +23,7 @@ if (empty($controllerName)) {
     if (in_array($action, ['login', 'logout', 'register'])) {
         $controllerName = 'login';
     } else {
-        $controllerName = 'dashboard';
+        $controllerName = 'home';
     }
 }
 
@@ -40,7 +40,7 @@ if (file_exists($controllerFile)) {
         $content = ob_get_clean();
 
         // Chỉ áp dụng layout admin cho các controller thuộc admin
-        $adminControllers = ['News', 'Login', 'Dashboard', 'Category']; // Thêm Category
+        $adminControllers = ['News', 'Login', 'Dashboard', 'Category']; 
         if (in_array(ucfirst($controllerName), $adminControllers)) {
             require_once __DIR__ . "/app/views/admin/layouts/main.php";
         } else {
