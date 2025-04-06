@@ -60,4 +60,91 @@ class LoginController
 
         require_once './app/views/register.php';
     }
+
+    public function login_facebook()
+    {
+        $fb = new \Facebook\Facebook([
+            'app_id' => 'YOUR_FACEBOOK_APP_ID',
+            'app_secret' => 'YOUR_FACEBOOK_APP_SECRET',
+            'default_graph_version' => 'v12.0',
+        ]);
+
+        $helper = $fb->getRedirectLoginHelper();
+        $permissions = ['email']; // Các quyền cần lấy
+        $loginUrl = $helper->getLoginUrl('http://localhost/DoAn-PHP/index.php?action=facebook_callback', $permissions);
+
+        header("Location: " . $loginUrl);
+        exit();
+    }
+
+    public function facebook_callback()
+    {
+        $fb = new \Facebook\Facebook([
+            'app_id' => 'YOUR_FACEBOOK_APP_ID',
+            'app_secret' => 'YOUR_FACEBOOK_APP_SECRET',
+            'default_graph_version' => 'v12.0',
+        ]);
+
+        $helper = $fb->getRedirectLoginHelper();
+
+        try {
+            $accessToken = $helper->getAccessToken();
+            if (!isset($accessToken)) {
+                die('Không lấy được Access Token!');
+            }
+
+            $response = $fb->get('/me?fields=id,name,email', $accessToken);
+            $user = $response->getGraphUser();
+
+            $_SESSION['user'] = [
+                'username' => $user['email'],
+                'fullname' => $user['name'],
+                'role' => 'user'
+            ];
+
+            header("Location: index.php?action=index");
+            exit();
+        } catch (Exception $e) {
+            echo 'Lỗi đăng nhập Facebook: ' . $e->getMessage();
+        }
+    }
+
+    public function login_google()
+    {
+        $client = new \Google_Client();
+        $client->setClientId('YOUR_GOOGLE_CLIENT_ID');
+        $client->setClientSecret('YOUR_GOOGLE_CLIENT_SECRET');
+        $client->setRedirectUri('http://localhost/DoAn-PHP/index.php?action=google_callback');
+        $client->addScope("email");
+        $client->addScope("profile");
+
+        $authUrl = $client->createAuthUrl();
+        header('Location: ' . $authUrl);
+        exit();
+    }
+
+    public function google_callback()
+    {
+        $client = new \Google_Client();
+        $client->setClientId('YOUR_GOOGLE_CLIENT_ID');
+        $client->setClientSecret('YOUR_GOOGLE_CLIENT_SECRET');
+        $client->setRedirectUri('http://localhost/DoAn-PHP/index.php?action=google_callback');
+
+        if (isset($_GET['code'])) {
+            $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+            $client->setAccessToken($token);
+
+            $oauth = new \Google_Service_Oauth2($client);
+            $userInfo = $oauth->userinfo->get();
+
+            $_SESSION['user'] = [
+                'username' => $userInfo->email,
+                'fullname' => $userInfo->name,
+                'role' => 'user'
+            ];
+
+            header('Location: index.php?action=index');
+            exit();
+        }
+    }
 }

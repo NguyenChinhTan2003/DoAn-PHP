@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
     <link rel="stylesheet" href="public/css/login_style.css">
 </head>
+
 <body>
     <!-- Video Background -->
     <div class="video-container">
@@ -32,7 +34,18 @@
             <button type="submit" name="login" class="btn-login">Đăng nhập</button>
 
             <p class="register-link">Chưa có tài khoản? <a href="index.php?action=register">Đăng ký ngay</a></p>
+
+            <!-- Nút đăng nhập mạng xã hội -->
+            <div class="social-login">
+                <p>------Hoặc đăng nhập bằng------</p>
+                <a href="index.php?controller=login&action=login_facebook" class="btn-social facebook">Login with Facebook</a>
+                <a href="index.php?controller=login&action=login_google" class="btn-social google">Login with Google</a>
+            </div>
+
+
+
         </form>
     </div>
 </body>
+
 </html>

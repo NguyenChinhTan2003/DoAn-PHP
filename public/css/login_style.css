@@ -270,3 +270,26 @@ option {
     width: 350px;
     z-index: 10; /* Đảm bảo form hiển thị trên video */
 }
+
+.social-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-social {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.google {
+    background-color: #db4437;
+}
