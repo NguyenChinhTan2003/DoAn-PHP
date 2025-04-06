@@ -37,9 +37,9 @@
 
             <!-- Nút đăng nhập mạng xã hội -->
             <div class="social-login">
-                <p>------Hoặc đăng nhập bằng------</p>
-                <a href="index.php?controller=login&action=login_facebook" class="btn-social facebook">Login with Facebook</a>
-                <a href="index.php?controller=login&action=login_google" class="btn-social google">Login with Google</a>
+                <p>Hoặc đăng nhập bằng</p>
+                <a href="index.php?controller=login&action=login_facebook" class="btn-social facebook">Facebook</a>
+                <a href="index.php?controller=login&action=login_google" class="btn-social google">Google</a>
             </div>
 
 
