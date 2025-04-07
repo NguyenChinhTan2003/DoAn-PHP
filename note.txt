@@ -22,6 +22,9 @@ Nếu dưới phiên bản 8.1 thì lên web tải lại nha
 Trong trường hợp cài xong mà bị lỗi Warning ở thư mục vendor/composer/autoload_real.php dòng 41:
 + Xóa folder vendor
 + composer install
+
+Do chưa có Domain nên là dùng đường dẫn tuyệt đối. Mọi người chuyển folder DoAn-PHP ra ngoài nha:
+xampp/htdocs/DoAn-PHP
 ----------------------------------------------------------------
 Các code về DB của PHP để đây nha
 
