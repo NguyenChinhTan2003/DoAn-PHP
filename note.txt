@@ -6,6 +6,18 @@ admin
 user
 123
 ----------------------------------------------------------------
+Composer (Lấy ID đăng nhập vô FB + GG)
+Tải và cài đặt Composer từ trang chính thức: getcomposer.org.
+Cài về để đường dẫn vô xampp/php/php.exe (Cái này hình như nó tự động chọn sẵn cho).
+Check version trong CMD: composer -v
+Xong thì vô project mở Terminal:
++ composer require google/apiclient:2.18
++ composer require guzzlehttp/guzzle:^7.0
++ composer install
+
+Trong trường hợp cài xong mà bị lỗi Warning ở thư mục vendor/composer/autoload_real.php dòng 41 thì xóa Cache bằng lệnh:
+    composer clear-ache
+----------------------------------------------------------------
 Các code về DB của PHP để đây nha
 
 Create database Game_News
