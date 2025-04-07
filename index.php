@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 spl_autoload_register(function ($class_name) {
     $paths = [
         __DIR__ . "/app/controllers/" . $class_name . ".php",
