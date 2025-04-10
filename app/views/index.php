@@ -82,9 +82,9 @@
 		<div class="ln-title">Latest News</div>
 		<div class="news-ticker">
 			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+				<div class="nt-item"><span class="new">new</span>Genshin Impact 4.0 ra mắt bản đồ Fontaine. </div>
+				<div class="nt-item"><span class="strategy">strategy</span>Hướng dẫn build team mạnh nhất Honkai: Star Rail 1.3. </div>
+				<div class="nt-item"><span class="racing">racing</span>Đánh giá Baldur's Gate 3: Kiệt tác RPG thế hệ mới . </div>
 			</div>
 		</div>
 	</div>
@@ -96,41 +96,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="public/img/features/1.jpg">
+					<div class="feature-item set-bg" data-setbg="public/img/single-blog/1.jpg">
 						<span class="cata new">new</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+							<h5><a href="?controller=singleblog&id=1">Genshin Impact 4.0 ra mắt bản đồ Fontaine</a></h5>
+							<p>HoYoverse chính thức trình làng bản cập nhật 4.0 đầy ấn tượng ... </p>
 							<a href="#" class="fi-comment">3 Comments</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="public/img/features/2.jpg">
+					<div class="feature-item set-bg" data-setbg="public/img/single-blog/2.jpg">
 						<span class="cata strategy">strategy</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+							<h5><a href="?controller=singleblog&id=2">Valorant Champions 2023: Team A giành chức vô địch</a></h5>
+							<p>Team A lập nên kỳ tích tại Valorant Champions 2023 sau màn lội ngược ... </p>
 							<a href="#" class="fi-comment">3 Comments</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="public/img/features/3.jpg">
+					<div class="feature-item set-bg" data-setbg="public/img/single-blog/4.jpg">
 						<span class="cata new">new</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+							<h5><a href="?controller=singleblog&id=3">Hướng dẫn build team mạnh nhất Honkai: Star Rail 1.3</a></h5>
+							<p>Bài viết phân tích chi tiết các đội hình (team com... </p>
 							<a href="#" class="fi-comment">3 Comments</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 p-0">
-					<div class="feature-item set-bg" data-setbg="public/img/features/4.jpg">
+					<div class="feature-item set-bg" data-setbg="public/img/single-blog/6.jpg">
 						<span class="cata racing">racing</span>
 						<div class="fi-content text-white">
-							<h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+							<h5><a href="?controller=singleblog&id=4">Đánh giá Baldur's Gate 3: Kiệt tác RPG thế hệ mới</a></h5>
+							<p>Baldur's Gate 3 xứng đáng được đánh giá 10/10 nhờ cốt truyện đầy chiều sâu... </p>
 							<a href="#" class="fi-comment">3 Comments</a>
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 <?php
+// models/NewsModel.php
 class News {
     private $conn;
     private $table_name = "news";
@@ -10,6 +11,7 @@ class News {
     public $image;
     public $created_at;
     public $updated_at;
+    public $views; // Thêm thuộc tính views
 
     public function __construct($db) {
         $this->conn = $db;
@@ -78,6 +80,14 @@ class News {
         $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->conn->prepare($query);
         $this->id = htmlspecialchars(strip_tags($this->id));
+        $stmt->bindParam(1, $this->id);
+        return $stmt->execute();
+    }
+
+    // Thêm phương thức để tăng số lượt xem
+    public function incrementViews() {
+        $query = "UPDATE " . $this->table_name . " SET views = views + 1 WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->id);
         return $stmt->execute();
     }
