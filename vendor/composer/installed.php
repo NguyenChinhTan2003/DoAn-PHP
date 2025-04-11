@@ -3,11 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-<<<<<<< HEAD
-        'reference' => 'db9d67cc3edc180d0cd5c374fad6c13d8336dffa',
-=======
-        'reference' => '99d10e7bde9e0972bda9c58c70199ade9ecd50dc',
->>>>>>> origin/quang
+        'reference' => '256ef48e5ead2c32479542d4c9e538f896abe214',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -17,11 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-<<<<<<< HEAD
-            'reference' => 'db9d67cc3edc180d0cd5c374fad6c13d8336dffa',
-=======
-            'reference' => '99d10e7bde9e0972bda9c58c70199ade9ecd50dc',
->>>>>>> origin/quang
+            'reference' => '256ef48e5ead2c32479542d4c9e538f896abe214',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
