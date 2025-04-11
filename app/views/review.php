@@ -1,388 +1,135 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="en">
 <head>
-	<title>Game Warrior</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Game Warrior Template">
-	<meta name="keywords" content="warrior, game, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
-	<link href="public/img/favicon.ico" rel="shortcut icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Reviews</title>
+    <!-- Bao gồm Font Awesome cho biểu tượng sao -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Liên kết đến file CSS riêng -->
+    <link rel="stylesheet" href="public/css/review-page.css">
+    <link href="public/img/favicon.ico" rel="shortcut icon" />
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="public/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="public/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="public/css/owl.carousel.css" />
-	<link rel="stylesheet" href="public/css/style.css" />
-	<link rel="stylesheet" href="public/css/animate.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="public/css/owl.carousel.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="public/css/animate.css" />
 </head>
-
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+    <header class="header-section">
+        <div class="container">
+            <!-- logo -->
+            <a class="site-logo" href="?controller=home&action=index">
+                <img src="public/img/logo.png" alt="">
+            </a>
+            <div class="user-panel">
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <span>Xin chào, <b><?php echo $_SESSION['user']['fullname']; ?></b>!</span>
+                    <a href="index.php?action=logout" class="logout-btn">Đăng xuất</a>
+                <?php else : ?>
+                    <a href="index.php?action=login">Login</a> /
+                    <a href="index.php?action=register">Register</a>
+                <?php endif; ?>
+            </div>
+            <!-- responsive -->
+            <div class="nav-switch">
+                <i class="fa fa-bars"></i>
+            </div>
+            <!-- site menu -->
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="?controller=home&action=index">Home</a></li>
+                    <li><a href="?controller=review&action=index">Games</a></li>
+                    <li><a href="?controller=category&action=index">Blog</a></li>
+                    <li><a href="?controller=community&action=index">Forums</a></li>
+                    <li><a href="?controller=dashboad&action=index">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<!-- logo -->
-			<a class="site-logo" href="?controller=home&action=index">
-				<img src="public/img/logo.png" alt="">
-			</a>
-			<div class="user-panel">
-				<?php if (isset($_SESSION['user'])) : ?>
-					<span>Xin chào, <b><?php echo $_SESSION['user']['fullname']; ?></b>!</span>
-					<a href="index.php?action=logout" class="logout-btn">Đăng xuất</a>
-				<?php else : ?>
-					<a href="index.php?action=login">Login</a> /
-					<a href="index.php?action=register">Register</a>
-				<?php endif; ?>
-			</div>
-			<!-- responsive -->
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<!-- site menu -->
-			<nav class="main-menu">
-				<ul>
-					<li><a href="?controller=home&action=index">Home</a></li>
-					<li><a href="?controller=review&action=index">Games</a></li>
-					<li><a href="?controller=category&action=index">Blog</a></li>
-					<li><a href="?controller=community&action=index">Forums</a></li>
-					<li><a href="?controller=contact&action=index">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<!-- Header section end -->
+    <!-- Page info section -->
+    <section class="page-info-section set-bg" data-setbg="public/img/page-top-bg/3.jpg">
+        <div class="pi-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 text-white">
+                        <h2>Game NEWS</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Page section (2 cột lớn cho tất cả tin tức) -->
+    <section class="page-section review-page spad">
+        <div class="container">
+            <!-- Debug: Kiểm tra số lượng bài đăng trong $newsList -->
 
-	<!-- Latest news section -->
-	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
-		<div class="news-ticker">
-			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-			</div>
-		</div>
-	</div>
-	<!-- Latest news section end -->
+            <div class="row">
+                <?php 
+                // Sắp xếp $newsList theo ngày đăng mới nhất (created_at giảm dần)
+                // (Không cần usort vì đã sắp xếp trong truy vấn SQL)
+                // usort($newsList, function($a, $b) {
+                //     return strtotime($b['created_at']) - strtotime($a['created_at']);
+                // });
 
+                // Khởi tạo biến đếm để gán hình ảnh theo thứ tự
+                $imageCounter = 1;
+                // Hiển thị tất cả tin tức từ $newsList trong bố cục 2 cột
+                foreach ($newsList as $news): 
+                    // Gán giá trị mặc định nếu dữ liệu thiếu
+                    $news['id'] = $news['id'] ?? 0;
+                    $news['title'] = $news['title'] ?? 'Untitled';
+                    $news['content'] = $news['content'] ?? 'No content';
+                    $news['created_at'] = $news['created_at'] ?? date('Y-m-d H:i:s');
+                ?>
+                <div class="col-md-6">
+                    <div class="review-item">
+                        <div class="review-cover set-bg" 
+                             data-setbg="public/img/single-blog/<?php echo $imageCounter; ?>.jpg">
+                            <div class="score yellow"><?php echo rand(8, 9) . '.' . rand(0, 9); ?></div>
+                        </div>
+                        <div class="review-text">
+                            <h4><?php echo htmlspecialchars($news['title']); ?></h4>
+                            <div class="rating">
+                                <?php 
+                                $rating = rand(3, 5);
+                                for ($i = 0; $i < 5; $i++) {
+                                    echo $i < $rating 
+                                        ? '<i class="fa fa-star"></i>' 
+                                        : '<i class="fa fa-star is-fade"></i>';
+                                }
+                                ?>
+                            </div>
+                            <p><?php echo substr(htmlspecialchars($news['content']), 0, 150) . '...'; ?></p>
+                            <a href="?controller=singleblog&id=<?php echo $news['id']; ?>" 
+                               class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                // Tăng biến đếm để lấy hình ảnh tiếp theo
+                $imageCounter++;
+                endforeach; 
+                ?>
+            </div>
+        </div>
+    </section>
 
-	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="public/img/page-top-bg/3.jpg">
-		<div class="pi-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Game reviews</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page info section -->
-
-
-	<!-- Page section -->
-	<section class="page-section review-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/5.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Overwatch Halloween</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/6.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Grand Theft Auto</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/7.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Avatar</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/8.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Anthem</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/9.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Cyberpunk 2077</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/10.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Spiderman</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="text-center pt-4">
-				<button class="site-btn btn-sm">Load More</button>
-			</div>
-		</div>
-	</section>
-	<!-- Page section end -->
-
-
-	<!-- Review section -->
-	<section class="review-section review-dark spad set-bg" data-setbg="public/img/review-bg-2.jpg">
-		<div class="container">
-			<div class="section-title text-white">
-				<div class="cata new">new</div>
-				<h2>Recent Reviews</h2>
-			</div>
-			<div class="row text-white">
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/1.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h5>Assasin’’s Creed</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/2.jpg">
-							<div class="score purple">9.5</div>
-						</div>
-						<div class="review-text">
-							<h5>Doom</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/3.jpg">
-							<div class="score green">9.1</div>
-						</div>
-						<div class="review-text">
-							<h5>Overwatch</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/4.jpg">
-							<div class="score pink">9.7</div>
-						</div>
-						<div class="review-text">
-							<h5>GTA</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Review section end -->
-
-
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="footer-top-bg">
-				<img src="public/img/footer-top-bg.png" alt="">
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-logo text-white">
-						<img src="public/img/footer-logo.png" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
-						<div class="latest-blog">
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/1.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/2.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/3.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
-						<div class="top-comment">
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/1.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/2.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/3.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/4.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Footer top section end -->
-
-
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<ul class="footer-menu">
-				<li><a href="?controller=home&action=index">Home</a></li>
-				<li><a href="?controller=review&action=index">Games</a></li>
-				<li><a href="?controller=category&action=index">Blog</a></li>
-				<li><a href="?controller=community&action=index">Forums</a></li>
-				<li><a href="?controller=contact&action=index">Contact</a></li>
-			</ul>
-			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;<script>
-					document.write(new Date().getFullYear());
-				</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</p>
-		</div>
-	</footer>
-	<!-- Footer section end -->
-
-
-	<!--====== Javascripts & Jquery ======-->
-	<script src="public/js/jquery-3.2.1.min.js"></script>
-	<script src="public/js/bootstrap.min.js"></script>
-	<script src="public/js/owl.carousel.min.js"></script>
-	<script src="public/js/jquery.marquee.min.js"></script>
-	<script src="public/js/main.js"></script>
+    <!-- Script để set background image -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.set-bg').forEach(element => {
+                const bg = element.getAttribute('data-setbg');
+                element.style.backgroundImage = `url(${bg})`;
+            });
+        });
+    </script>
 </body>
-
 </html>
