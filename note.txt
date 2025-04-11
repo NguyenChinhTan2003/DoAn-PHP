@@ -25,6 +25,11 @@ Trong trường hợp cài xong mà bị lỗi Warning ở thư mục vendor/com
 
 Do chưa có Domain nên là dùng đường dẫn tuyệt đối. Mọi người chuyển folder DoAn-PHP ra ngoài nha:
 xampp/htdocs/DoAn-PHP
+
+Lỗi merge phpmailer.php:
+Tắt hết file vendor thay đổi
+Dùng lệnh sau để down
+composer require phpmailer/phpmailer
 ----------------------------------------------------------------
 Các code về DB của PHP để đây nha
 
