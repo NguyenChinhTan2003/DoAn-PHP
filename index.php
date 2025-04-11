@@ -55,7 +55,7 @@ if (file_exists($controllerFile)) {
     if (method_exists($controllerClass, '__construct') && $controllerClass === 'CommunityController') {
         $controller = new $controllerClass($db);
     } else {
-        $controller = new $controllerClass();
+        $controller = new $controllerClass($db);
     }
     
     if (method_exists($controller, $action)) {

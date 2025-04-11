@@ -119,7 +119,7 @@
 						</form>
 					</div>
 				<?php else : ?>
-					<p class="text-center mt-4">Vui lòng <a href="?controller=index.php?&action=login">đăng nhập</a> để thêm bình luận.</p>
+					<p class="text-center mt-4">Vui lòng <a href="index.php?&action=login">đăng nhập</a> để thêm bình luận.</p>
 				<?php endif; ?>
 				<!-- Hiển thị danh sách bình luận -->
 				<div class="row">
