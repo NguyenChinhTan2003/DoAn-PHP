@@ -15,45 +15,60 @@ spl_autoload_register(function ($class_name) {
             return;
         }
     }
+
+    // Thử tìm trong thư mục admin nếu không tìm thấy
+    $adminPath = __DIR__ . "/app/controllers/admin/" . $class_name . ".php";
+    if (file_exists($adminPath)) {
+        require_once $adminPath;
+        return;
+    }
+
     die("❌ Không tìm thấy file: " . $class_name);
 });
 
-$controllerName = $_GET['controller'] ?? '';
+$controllerName = $_GET['controller'] ?? 'home';
 $action = $_GET['action'] ?? 'index';
 
-if (empty($controllerName)) {
-    if (in_array($action, ['login', 'logout', 'register'])) {
-        $controllerName = 'login';
-    } else {
-        $controllerName = 'home';
+$controllerClass = ucfirst($controllerName) . 'Controller';
+
+// Mảng các đường dẫn tiềm năng cho controller
+$controllerPaths = [
+    __DIR__ . "/app/controllers/" . $controllerClass . ".php",
+    __DIR__ . "/app/controllers/admin/" . $controllerClass . ".php"
+];
+
+$controllerFound = false; // Biến cờ để kiểm tra xem controller đã được tìm thấy chưa
+
+foreach ($controllerPaths as $controllerFile) {
+    if (file_exists($controllerFile)) {
+        require_once $controllerFile;
+        $controller = new $controllerClass();
+        $controllerFound = true;
+        break; // Thoát khỏi vòng lặp nếu tìm thấy controller
     }
 }
 
-$controllerClass = ucfirst($controllerName) . 'Controller';
-$controllerFile = __DIR__ . "/app/controllers/" . $controllerClass . ".php";
+if (!$controllerFound) {
+    http_response_code(404);
+    die("❌ Controller `$controllerClass` không tồn tại");
+}
 
-if (file_exists($controllerFile)) {
-    require_once $controllerFile;
-    $controller = new $controllerClass();
 
-    if (method_exists($controller, $action)) {
-        ob_start();
-        $controller->$action();
-        $content = ob_get_clean();
+if (method_exists($controller, $action)) {
+    ob_start();
+    $controller->$action();
+    $content = ob_get_clean();
 
-        // Chỉ áp dụng layout admin cho các controller thuộc admin
-        $adminControllers = ['News', 'Dashboard', 'Category']; 
-        if (in_array(ucfirst($controllerName), $adminControllers)) {
-            require_once __DIR__ . "/app/views/admin/layouts/main.php";
-        } else {
-            echo $content;
-        }
+    // Sử dụng một mảng để xác định các controller admin
+    $adminControllers = ['News', 'Dashboard', 'Category', 'ContactAdmin'];
+    if (in_array(ucfirst($controllerName), $adminControllers)) {
+        require_once __DIR__ . "/app/views/admin/layouts/main.php";
+        echo $content; // Hiển thị nội dung trong layout admin
     } else {
-        http_response_code(404);
-        die("❌ Action `$action` không tồn tại trong $controllerClass");
+        echo $content;
     }
 } else {
     http_response_code(404);
-    die("❌ Controller `$controllerClass` không tồn tại");
+    die("❌ Action `$action` không tồn tại trong $controllerClass");
 }
 ?>
