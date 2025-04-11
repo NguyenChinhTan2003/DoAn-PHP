@@ -293,3 +293,76 @@ option {
 .google {
     background-color: #db4437;
 }
+
+.forgot-password-link {
+    position: relative;
+    color: #00ffcc; /* Màu neon xanh cyan giống register-link */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95em; /* Kích thước chữ tương tự register-link */
+    padding: 2px 5px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.3);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Hiệu ứng gạch chân động */
+.forgot-password-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #00ffcc;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.forgot-password-link:hover::after {
+    width: 100%;
+}
+
+.forgot-password-link:hover {
+    color: #ff6699; /* Chuyển sang màu hồng neon khi hover */
+    text-shadow: 0 0 10px rgba(255, 102, 153, 0.8), 0 0 20px rgba(255, 102, 153, 0.5);
+    transform: scale(1.05);
+    display: inline-block;
+}
+
+/* copy */
+.change-password-link {
+    position: relative;
+    color: #00ffcc; /* Màu neon xanh cyan giống register-link */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95em; /* Kích thước chữ tương tự register-link */
+    padding: 2px 5px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.3);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Hiệu ứng gạch chân động */
+.change-password-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #00ffcc;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.change-password-link:hover::after {
+    width: 100%;
+}
+
+.change-password-link:hover {
+    color: #ff6699; /* Chuyển sang màu hồng neon khi hover */
+    text-shadow: 0 0 10px rgba(255, 102, 153, 0.8), 0 0 20px rgba(255, 102, 153, 0.5);
+    transform: scale(1.05);
+    display: inline-block;
+}
