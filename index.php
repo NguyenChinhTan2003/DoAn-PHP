@@ -49,8 +49,15 @@ $controllerFile = __DIR__ . "/app/controllers/" . $controllerClass . ".php";
 
 if (file_exists($controllerFile)) {
     // Khởi tạo controller và truyền $db vào constructor
-    $controller = new $controllerClass($db);
+    // $controller = new $controllerClass($db);
 
+    // Khởi tạo controller, truyền DB nếu cần
+    if (method_exists($controllerClass, '__construct') && $controllerClass === 'CommunityController') {
+        $controller = new $controllerClass($db);
+    } else {
+        $controller = new $controllerClass();
+    }
+    
     if (method_exists($controller, $action)) {
         ob_start();
         $controller->$action();

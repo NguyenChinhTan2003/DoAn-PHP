@@ -20,7 +20,10 @@
     <!-- Form đăng nhập -->
     <div class="login-container">
         <h2>Đăng nhập</h2>
-        <form method="POST" action="index.php?action=login" class="login-form">
+        <?php if (isset($error)): ?>
+            <p style="color: red; text-align: center;"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
+        <form method="POST" action="?controller=login&action=login" class="login-form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -31,10 +34,10 @@
                 <input type="password" id="password" name="password" required>
             </div>
 
-            <button type="submit" name="login" class="btn-login">Đăng nhập</button>
+            <button type="submit" class="btn-login">Đăng nhập</button>
             <p><a href="index.php?controller=login&action=forgot_password" class="forgot-password-link">Quên mật khẩu?</a></p>
             <p><a href="index.php?controller=login&action=change_password" class="change-password-link">Đổi mật khẩu</a></p>
-            <p class="register-link">Chưa có tài khoản? <a href="index.php?action=register">Đăng ký ngay</a></p>
+            <p class="register-link">Chưa có tài khoản? <a href="?controller=login&action=register">Đăng ký ngay</a></p>
 
             <!-- Nút đăng nhập mạng xã hội -->
             <div class="social-login">
@@ -45,4 +48,5 @@
         </form>
     </div>
 </body>
+
 </html>

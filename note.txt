@@ -63,3 +63,32 @@ CREATE TABLE news (
     FOREIGN KEY (category_id) REFERENCES categories(id),
     views INT(11) DEFAULT 0
 );
+
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,  -- Người tạo bài viết
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id)  -- Liên kết với bảng người dùng
+);
+
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    post_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (post_id) REFERENCES posts(id)
+);
+
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL, 
+    message TEXT NOT NULL, 
+    is_read BOOLEAN DEFAULT FALSE, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    FOREIGN KEY (user_id) REFERENCES user(id) 
+);

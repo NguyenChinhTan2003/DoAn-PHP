@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
+
 <head>
     <link rel="stylesheet" href="public/css/register_style.css">
     <title>Đăng ký tài khoản</title>
 </head>
+
 <body>
     <div class="video-container">
         <video autoplay loop muted>
@@ -15,7 +17,10 @@
 
     <div class="form-container">
         <h2>Đăng ký tài khoản</h2>
-        <form method="POST" action="index.php?action=register" class="register-form">
+        <?php if (isset($error)): ?>
+            <p style="color: red; text-align: center;"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
+        <form method="POST" action="?controller=login&action=register" class="register-form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -49,4 +54,5 @@
         </form>
     </div>
 </body>
+
 </html>

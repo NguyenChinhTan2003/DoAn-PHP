@@ -5,10 +5,17 @@ class UserModel
 {
     private $conn;
 
-    public function __construct()
+    public function __construct($dbConnection = null)
     {
-        $db = new Database();
-        $this->conn = $db->getConnection();
+        if ($dbConnection) {
+            $this->conn = $dbConnection;
+        } else {
+            $db = new Database();
+            $this->conn = $db->getConnection();
+        }
+        if (!$this->conn) {
+            die("Không thể kết nối đến database!");
+        }
     }
 
     // ---- Đăng nhập ----
@@ -29,12 +36,13 @@ class UserModel
     public function registerUser($username, $password, $fullname, $email, $role = 'user')
     {
         // Kiểm tra username đã tồn tại chưa
-        $stmt = $this->conn->prepare("SELECT * FROM user WHERE username = :username");
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE username = :username OR email = :email");
         $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
 
         if ($stmt->fetch(PDO::FETCH_ASSOC)) {
-            return ['status' => false, 'message' => 'Tên đăng nhập đã tồn tại!'];
+            return ['status' => false, 'message' => 'Tên đăng nhập hoặc email đã tồn tại!'];
         }
 
         // Mã hóa mật khẩu
@@ -48,11 +56,10 @@ class UserModel
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':role', $role);
 
-        if ($stmt->execute()) {
-            return ['status' => true, 'message' => 'Đăng ký thành công!'];
-        } else {
-            return ['status' => false, 'message' => 'Đăng ký thất bại!'];
-        }
+        return [
+            'status' => $stmt->execute(),
+            'message' => $stmt->execute() ? 'Đăng ký thành công!' : 'Đăng ký thất bại!'
+        ];
     }
 
     // Quên mật khẩu

@@ -8,6 +8,11 @@ use PHPMailer\PHPMailer\Exception;
 
 class LoginController
 {
+    private $userModel;
+    public function __construct($dbConnection = null)
+    {
+        $this->userModel = new UserModel($dbConnection);
+    }
     private $facebookAppId = '1632576790754984';
     private $facebookAppSecret = '238b83553e58ba1b9722042ea8462b34';
     private $facebookRedirectUri = 'http://localhost/DoAn-PHP/index.php?controller=login&action=facebook_callback';
@@ -23,55 +28,61 @@ class LoginController
             $username = $_POST['username'] ?? '';
             $password = $_POST['password'] ?? '';
 
-            $model = new UserModel();
-            $user = $model->getUser($username, $password);
+            // $model = new UserModel();
+            // $user = $model->getUser($username, $password);
+            if (empty($username) || empty($password)) {
+                $error = "Vui lòng nhập đầy đủ tài khoản và mật khẩu.";
+                include './app/views/login.php';
+                return;
+            }
+
+            $user = $this->userModel->getUser($username, $password);
 
             if ($user) {
                 $_SESSION['user'] = [
+                    'user_id' => $user['id'],
                     'username' => $user['username'],
                     'fullname' => $user['fullname'],
                     'role' => $user['role']
                 ];
-                header('Location: index.php?action=index');
+                header('Location: ?controller=home&action=index');
                 exit();
             } else {
-                echo "<script>alert('Sai tài khoản hoặc mật khẩu!');</script>";
+                $error = "Sai tài khoản hoặc mật khẩu!";
+                include './app/views/login.php';
             }
+        } else {
+            include './app/views/login.php';
         }
-
-        include './app/views/login.php';
     }
 
     public function logout()
     {
         session_destroy();
-        header('Location: index.php?action=index');
+        header('Location: ?controller=home&action=index');
         exit();
     }
 
     public function register()
     {
-        require_once './app/models/UserModel.php';
-        $model = new UserModel();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $fullname = $_POST['fullname'] ?? '';
+            $email = $_POST['email'] ?? '';
 
-        if (isset($_POST['register'])) {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $fullname = $_POST['fullname'];
-            $email = $_POST['email'];
-
-            $result = $model->registerUser($username, $password, $fullname, $email);
+            $result = $this->userModel->registerUser($username, $password, $fullname, $email);
 
             if ($result['status']) {
-                echo "<script>alert('Đăng ký thành công!'); window.location.href='index.php?action=login';</script>";
+                header('Location: ?controller=login&action=login');
                 exit();
             } else {
-                echo "<script>alert('" . $result['message'] . "'); window.location.href='index.php?action=register';</script>";
-                exit();
+                $error = $result['message'];
+                include './app/views/register.php';
             }
+        } else {
+            include './app/views/register.php';
         }
-
-        require_once './app/views/register.php';
     }
 
     public function login_facebook()
