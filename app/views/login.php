@@ -33,7 +33,7 @@
 
             <button type="submit" name="login" class="btn-login">Đăng nhập</button>
             <p><a href="index.php?controller=login&action=forgot_password" class="forgot-password-link">Quên mật khẩu?</a></p>
-            <p><a href="index.php?controller=login&action=change_password">Đổi mật khẩu</a></p>
+            <p><a href="index.php?controller=login&action=change_password" class="change-password-link">Đổi mật khẩu</a></p>
             <p class="register-link">Chưa có tài khoản? <a href="index.php?action=register">Đăng ký ngay</a></p>
 
             <!-- Nút đăng nhập mạng xã hội -->

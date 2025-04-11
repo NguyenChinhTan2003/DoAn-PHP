@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Đổi mật khẩu</title>
-    <link rel="stylesheet" href="public/css/login_style.css">
+    <link rel="stylesheet" href="public/css/change_password.css">
 </head>
 <body>
     <!-- Video Background -->
@@ -13,7 +13,7 @@
         </video>
     </div>
     <div class="video-overlay"></div>
-    
+
     <div class="login-container">
         <h2>Đổi mật khẩu</h2>
         <form method="POST" action="index.php?controller=login&action=change_password">
