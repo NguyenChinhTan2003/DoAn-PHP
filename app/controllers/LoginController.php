@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once './app/models/UserModel.php';
 
 use GuzzleHttp\Client;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class LoginController
 {
@@ -211,8 +213,8 @@ class LoginController
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'your_email@gmail.com';         // Thay bằng email của bạn
-                    $mail->Password = 'your_app_password';            // Mật khẩu ứng dụng
+                    $mail->Username = 'quangdinh0106@gmail.com';
+                    $mail->Password = 'uman maec txia livs';
                     $mail->SMTPSecure = 'tls';
                     $mail->Port = 587;
 
@@ -236,5 +238,28 @@ class LoginController
         }
 
         include './app/views/forgot_password.php';
+    }
+
+    public function change_password()
+    {
+        require_once './app/models/UserModel.php';
+        $model = new UserModel();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $oldPassword = $_POST['old_password'];
+            $newPassword = $_POST['new_password'];
+
+            $user = $model->getUserByEmailAndPassword($email, $oldPassword);
+
+            if ($user) {
+                $model->updatePassword($email, $newPassword);
+                echo "<script>alert('Đổi mật khẩu thành công!'); window.location.href='index.php?action=login';</script>";
+            } else {
+                echo "<script>alert('Email hoặc mật khẩu cũ không đúng!');</script>";
+            }
+        }
+
+        include './app/views/change_password.php';
     }
 }

@@ -65,8 +65,23 @@ class UserModel
 
     public function updatePassword($email, $newPassword)
     {
-        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-        $stmt = $this->conn->prepare("UPDATE user SET password = ? WHERE email = ?");
-        return $stmt->execute([$hashedPassword, $email]);
+        $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+        $sql = "UPDATE user SET password = :password WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute([':password' => $hash, ':email' => $email]);
+    }
+
+    public function getUserByEmailAndPassword($email, $password)
+    {
+        $sql = "SELECT * FROM user WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        }
+
+        return false;
     }
 }
