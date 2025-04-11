@@ -36,13 +36,14 @@
                 <input type="email" id="email" name="email" required>
             </div>
 
-            <div class="form-group">
+            <!-- Cái này là chọn Role để test chức năng -->
+            <!-- <div class="form-group">
                 <label for="role">Role:</label>
                 <select id="role" name="role">
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
                 </select>
-            </div>
+            </div> -->
 
             <button type="submit" name="register" class="btn-register">Register</button>
         </form>
