@@ -32,7 +32,7 @@
             </div>
 
             <button type="submit" name="login" class="btn-login">Đăng nhập</button>
-
+            <p><a href="index.php?controller=login&action=forgot_password" class="forgot-password-link">Quên mật khẩu?</a></p>
             <p class="register-link">Chưa có tài khoản? <a href="index.php?action=register">Đăng ký ngay</a></p>
 
             <!-- Nút đăng nhập mạng xã hội -->
@@ -41,11 +41,7 @@
                 <a href="index.php?controller=login&action=login_facebook" class="btn-social facebook">Facebook</a>
                 <a href="index.php?controller=login&action=login_google" class="btn-social google">Google</a>
             </div>
-
-
-
         </form>
     </div>
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once './app/models/UserModel.php';
 
 use GuzzleHttp\Client;
 
@@ -188,5 +189,52 @@ class LoginController
             echo 'Lỗi đăng nhập Google: ' . $e->getMessage();
             exit();
         }
+    }
+
+    public function forgot_password()
+    {
+        $model = new UserModel();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $user = $model->getUserByEmail($email);
+
+            if ($user) {
+                // Tạo mật khẩu mới
+                $newPassword = bin2hex(random_bytes(4)); // 8 ký tự
+                $model->updatePassword($email, $newPassword);
+
+                // Gửi email bằng PHPMailer
+                $mail = new PHPMailer(true);
+
+                try {
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'your_email@gmail.com';         // Thay bằng email của bạn
+                    $mail->Password = 'your_app_password';            // Mật khẩu ứng dụng
+                    $mail->SMTPSecure = 'tls';
+                    $mail->Port = 587;
+
+                    $mail->setFrom('your_email@gmail.com', 'Quản trị viên');
+                    $mail->addAddress($email, $user['fullname']);
+
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Yêu cầu đặt lại mật khẩu';
+                    $mail->Body    = "Xin chào <b>{$user['fullname']}</b>,<br><br>Mật khẩu mới của bạn là: <b>$newPassword</b><br>Vui lòng đăng nhập và đổi mật khẩu ngay.";
+
+                    $mail->send();
+
+                    echo "<script>alert('Mật khẩu mới đã được gửi đến email của bạn!'); window.location.href='index.php?action=login';</script>";
+                } catch (Exception $e) {
+                    echo "<script>alert('Không thể gửi email. Lỗi: {$mail->ErrorInfo}'); window.location.href='index.php?action=login';</script>";
+                }
+            } else {
+                echo "<script>alert('Email không tồn tại trong hệ thống.'); window.location.href='index.php?controller=login&action=forgot_password';</script>";
+            }
+            exit();
+        }
+
+        include './app/views/forgot_password.php';
     }
 }

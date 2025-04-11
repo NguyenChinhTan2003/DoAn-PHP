@@ -54,5 +54,19 @@ class UserModel
             return ['status' => false, 'message' => 'Đăng ký thất bại!'];
         }
     }
+
+    // Quên mật khẩu
+    public function getUserByEmail($email)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updatePassword($email, $newPassword)
+    {
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+        $stmt = $this->conn->prepare("UPDATE user SET password = ? WHERE email = ?");
+        return $stmt->execute([$hashedPassword, $email]);
+    }
 }
-?>
