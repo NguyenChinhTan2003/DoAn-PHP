@@ -56,10 +56,11 @@ class UserModel
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':role', $role);
 
-        return [
-            'status' => $stmt->execute(),
-            'message' => $stmt->execute() ? 'Đăng ký thành công!' : 'Đăng ký thất bại!'
-        ];
+        if ($stmt->execute()) {
+            return ['status' => true, 'message' => 'Đăng ký thành công!'];
+        } else {
+            return ['status' => false, 'message' => 'Đăng ký thất bại!'];
+        }
     }
 
     // Quên mật khẩu
