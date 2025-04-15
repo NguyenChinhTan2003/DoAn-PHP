@@ -27,5 +27,11 @@
             </div>
         </div>
     </li>
+<li class="nav-item <?php echo $controllerName === 'adminContact' ? 'active' : ''; ?>">
+    <a class="nav-link" href="?controller=adminContact&action=index">
+        <i class="fas fa-fw fa-envelope"></i>
+        <span>Quản lý liên hệ</span></a>
+</li>
+
     <hr class="sidebar-divider">
 </ul>
