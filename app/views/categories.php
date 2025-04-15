@@ -55,6 +55,7 @@
 					<li><a href="?controller=category&action=index">Blog</a></li>
 					<li><a href="?controller=community&action=index">Forums</a></li>
 					<li><a href="?controller=contact&action=index">Contact</a></li>
+					<li><a href="?controller=dashboad&action=index">Dashboard</a></li>
 				</ul>
 			</nav>
 		</div>
