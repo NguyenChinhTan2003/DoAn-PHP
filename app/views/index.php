@@ -142,254 +142,254 @@
 
 
 	<!-- Recent game section  -->
-	<section class="recent-game-section spad set-bg" data-setbg="public/img/recent-game-bg.png">
-		<div class="container">
-			<div class="section-title">
-				<div class="cata new">new</div>
-				<h2>Recent Games</h2>
+<section class="recent-game-section spad set-bg" data-setbg="public/img/recent-game-bg.png">
+	<div class="container">
+		<div class="section-title">
+			<div class="cata new">mới</div>
+			<h2>Game Mới Nhất</h2>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="recent-game-item">
+					<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/1.jpg">
+						<div class="cata new">mới</div>
+					</div>
+					<div class="rgi-content">
+						<h5>Cyberpunk 2077: Phantom Liberty</h5>
+						<p>Trải nghiệm bản mở rộng hấp dẫn của tựa game RPG hậu tận thế với các nhiệm vụ mới, nhân vật mới và cốt truyện gay cấn tại Night City.</p>
+						<a href="#" class="comment">24 Bình luận</a>
+						<div class="rgi-extra">
+							<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
+							<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/1.jpg">
-							<div class="cata new">new</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="recent-game-item">
+					<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/2.jpg">
+						<div class="cata racing">đua xe</div>
+					</div>
+					<div class="rgi-content">
+						<h5>Forza Horizon 5: Rally Adventure</h5>
+						<p>Tham gia thử thách đua xe địa hình tuyệt đỉnh với các phương tiện rally mới, hệ thống thời tiết động và các giải đấu qua những khung cảnh tuyệt đẹp.</p>
+						<a href="#" class="comment">16 Bình luận</a>
+						<div class="rgi-extra">
+							<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
+							<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
 						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="recent-game-item">
+					<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/3.jpg">
+						<div class="cata adventure">Phiêu lưu</div>
+					</div>
+					<div class="rgi-content">
+						<h5>Elden Ring: Shadow of the Erdtree</h5>
+						<p>Hành trình vào vùng đất mở rộng của vũ trụ Elden Ring với những boss mới, vũ khí mới và những bí ẩn chờ đợi trong bản mở rộng được đánh giá cao này.</p>
+						<a href="#" class="comment">32 Bình luận</a>
+						<div class="rgi-extra">
+							<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
+							<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Recent game section end -->
+
+
+<!-- Tournaments section -->
+<section class="tournaments-section spad">
+	<div class="container">
+		<div class="tournament-title">Giải Đấu</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="tournament-item mb-4 mb-lg-0">
+					<div class="ti-notic">Giải Đấu Cao Cấp</div>
+					<div class="ti-content">
+						<div class="ti-thumb set-bg" data-setbg="public/img/tournament/1.jpg"></div>
+						<div class="ti-text">
+							<h4>World Of WarCraft</h4>
+							<ul>
+								<li><span>Bắt đầu giải đấu:</span> 15/05/2025</li>
+								<li><span>Kết thúc giải đấu:</span> 30/05/2025</li>
+								<li><span>Số người tham gia:</span> 16 đội</li>
+								<li><span>Tổ chức bởi:</span> BlizzardOps</li>
+							</ul>
+							<p><span>Giải thưởng:</span> Hạng nhất 5.000$, Hạng nhì: 2.500$, Hạng ba: 1.000$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="tournament-item">
+					<div class="ti-notic">Giải Đấu Cao Cấp</div>
+					<div class="ti-content">
+						<div class="ti-thumb set-bg" data-setbg="public/img/tournament/2.jpg"></div>
+						<div class="ti-text">
+							<h4>DOOM</h4>
+							<ul>
+								<li><span>Bắt đầu giải đấu:</span> 01/06/2025</li>
+								<li><span>Kết thúc giải đấu:</span> 15/06/2025</li>
+								<li><span>Số người tham gia:</span> 32 đội</li>
+								<li><span>Tổ chức bởi:</span> BethesdaGaming</li>
+							</ul>
+							<p><span>Giải thưởng:</span> Hạng nhất 3.000$, Hạng nhì: 1.500$, Hạng ba: 700$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Tournaments section bg -->
+
+
+<!-- Review section -->
+<section class="review-section spad set-bg" data-setbg="public/img/review-bg.png">
+	<div class="container">
+		<div class="section-title">
+			<div class="cata new">mới</div>
+			<h2>Đánh Giá Gần Đây</h2>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="review-item">
+					<div class="review-cover set-bg" data-setbg="public/img/review/1.jpg">
+						<div class="score yellow">9.3</div>
+					</div>
+					<div class="review-text">
+						<h5>Assassin's Creed Mirage</h5>
+						<p>Quay trở lại với cội nguồn của dòng game, mang đến trải nghiệm lẻn lút và ám sát chân thực.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="review-item">
+					<div class="review-cover set-bg" data-setbg="public/img/review/2.jpg">
+						<div class="score purple">9.5</div>
+					</div>
+					<div class="review-text">
+						<h5>DOOM Eternal</h5>
+						<p>Hành động không ngừng nghỉ, đồ họa siêu đẹp và gameplay điên cuồng xứng đáng với mọi lời khen.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="review-item">
+					<div class="review-cover set-bg" data-setbg="public/img/review/3.jpg">
+						<div class="score green">9.1</div>
+					</div>
+					<div class="review-text">
+						<h5>Overwatch 2</h5>
+						<p>Với các anh hùng mới và cơ chế chơi được cải tiến, Overwatch 2 mang đến làn gió mới cho thể loại FPS.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="review-item">
+					<div class="review-cover set-bg" data-setbg="public/img/review/4.jpg">
+						<div class="score pink">9.7</div>
+					</div>
+					<div class="review-text">
+						<h5>GTA VI</h5>
+						<p>Bom tấn được mong đợi nhất năm với thế giới mở rộng lớn, cốt truyện hấp dẫn và đồ họa đột phá.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Review section end -->
+
+
+<!-- Footer top section -->
+<section class="footer-top-section">
+	<div class="container">
+		<div class="footer-top-bg">
+			<img src="public/img/footer-top-bg.png" alt="">
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="footer-logo text-white">
+					<img src="public/img/footer-logo.png" alt="">
+					<p>Cổng thông tin game hàng đầu Việt Nam, cập nhật tin tức và đánh giá mới nhất từ làng game trong nước và quốc tế.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="footer-widget mb-5 mb-md-0">
+					<h4 class="fw-title">Bài Viết Mới Nhất</h4>
+					<div class="latest-blog">
+						<div class="lb-item">
+							<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/1.jpg"></div>
+							<div class="lb-content">
+								<div class="lb-date">15/04/2025</div>
+								<p>Top 10 game bạn không thể bỏ lỡ trong nửa đầu năm 2025</p>
+								<a href="#" class="lb-author">Bởi GameMaster</a>
+							</div>
+						</div>
+						<div class="lb-item">
+							<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/2.jpg"></div>
+							<div class="lb-content">
+								<div class="lb-date">10/04/2025</div>
+								<p>Tương lai của Cloud Gaming và cách nó thay đổi ngành công nghiệp</p>
+								<a href="#" class="lb-author">Bởi TechGuru</a>
+							</div>
+						</div>
+						<div class="lb-item">
+							<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/3.jpg"></div>
+							<div class="lb-content">
+								<div class="lb-date">05/04/2025</div>
+								<p>Hướng dẫn build PC gaming tốt nhất với ngân sách 20 triệu đồng</p>
+								<a href="#" class="lb-author">Bởi PCMaster</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/2.jpg">
-							<div class="cata racing">racing</div>
-						</div>
-						<div class="rgi-content">
-							<h5>Susce pulvinar metus nulla, vel facilisis sem </h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="footer-widget">
+					<h4 class="fw-title">Bình Luận Nổi Bật</h4>
+					<div class="top-comment">
+						<div class="tc-item">
+							<div class="tc-thumb set-bg" data-setbg="public/img/authors/1.jpg"></div>
+							<div class="tc-content">
+								<p><a href="#">Minh Tuấn</a> <span>về</span> Đánh giá PS5 Pro: Có đáng để nâng cấp?</p>
+								<div class="tc-date">14/04/2025</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/3.jpg">
-							<div class="cata adventure">Adventure</div>
+						<div class="tc-item">
+							<div class="tc-thumb set-bg" data-setbg="public/img/authors/2.jpg"></div>
+							<div class="tc-content">
+								<p><a href="#">Hoàng Phúc</a> <span>về</span> Hướng dẫn toàn tập Elden Ring</p>
+								<div class="tc-date">12/04/2025</div>
+							</div>
 						</div>
-						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
-							<div class="rgi-extra">
-								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
-								<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
+						<div class="tc-item">
+							<div class="tc-thumb set-bg" data-setbg="public/img/authors/3.jpg"></div>
+							<div class="tc-content">
+								<p><a href="#">Phước Hải</a> <span>về</span> Tin tức vập nhật nhanh quá shop</p>
+								<div class="tc-date">10/04/2025</div>
+							</div>
+						</div>
+						<div class="tc-item">
+							<div class="tc-thumb set-bg" data-setbg="public/img/authors/4.jpg"></div>
+							<div class="tc-content">
+								<p><a href="#">Nhật Quang</a> <span>về</span> Phải nạp game nữa rồi!!!</p>
+								<div class="tc-date">08/04/2025</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Recent game section end -->
-
-
-	<!-- Tournaments section -->
-	<section class="tournaments-section spad">
-		<div class="container">
-			<div class="tournament-title">Tournaments</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="tournament-item mb-4 mb-lg-0">
-						<div class="ti-notic">Premium Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="public/img/tournament/1.jpg"></div>
-							<div class="ti-text">
-								<h4>World Of WarCraft</h4>
-								<ul>
-									<li><span>Tournament Beggins:</span> June 20, 2018</li>
-									<li><span>Tounament Ends:</span> July 01, 2018</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tournament-item">
-						<div class="ti-notic">Premium Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="public/img/tournament/2.jpg"></div>
-							<div class="ti-text">
-								<h4>DOOM</h4>
-								<ul>
-									<li><span>Tournament Beggins:</span> June 20, 2018</li>
-									<li><span>Tounament Ends:</span> July 01, 2018</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Tournaments section bg -->
-
-
-	<!-- Review section -->
-	<section class="review-section spad set-bg" data-setbg="public/img/review-bg.png">
-		<div class="container">
-			<div class="section-title">
-				<div class="cata new">new</div>
-				<h2>Recent Reviews</h2>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/1.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h5>Assasin’’s Creed</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/2.jpg">
-							<div class="score purple">9.5</div>
-						</div>
-						<div class="review-text">
-							<h5>Doom</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/3.jpg">
-							<div class="score green">9.1</div>
-						</div>
-						<div class="review-text">
-							<h5>Overwatch</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="public/img/review/4.jpg">
-							<div class="score pink">9.7</div>
-						</div>
-						<div class="review-text">
-							<h5>GTA</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Review section end -->
-
-
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="footer-top-bg">
-				<img src="public/img/footer-top-bg.png" alt="">
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-logo text-white">
-						<img src="public/img/footer-logo.png" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
-						<div class="latest-blog">
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/1.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/2.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="public/img/latest-blog/3.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
-						<div class="top-comment">
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/1.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/2.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/3.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="public/img/authors/4.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>
+</section>
 	<!-- Footer top section end -->
 
 

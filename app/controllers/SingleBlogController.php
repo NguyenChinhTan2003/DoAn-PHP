@@ -4,7 +4,6 @@ class SingleBlogController {
     private $newsModel;
 
     public function __construct($db) {
-        // Sửa đường dẫn để trỏ đúng đến file newsModel.php
         require_once __DIR__ . '/../models/newsModel.php';
         $this->newsModel = new News($db);
     }
