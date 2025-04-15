@@ -52,8 +52,8 @@
 				<ul>
 					<li><a href="?controller=home&action=index">Home</a></li>
 					<li><a href="?controller=review&action=index">Games</a></li>
-					<li><a href="?controller=category&action=index">Blog</a></li>
 					<li><a href="?controller=community&action=index">Forums</a></li>
+					<li><a href="?controller=contact&action=index">Contact</a></li>
 					<li><a href="?controller=dashboad&action=index">Dashboard</a></li>
 					<!-- <li><a href="?controller=contact&action=index">Contact</a></li> -->
 				</ul>
@@ -151,13 +151,13 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/1.jpg">
+						<div class="rgi-thumb set-bg" data-setbg="public/img/single-blog/3.jpg">
 							<div class="cata new">new</div>
 						</div>
 						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
-							<a href="#" class="comment">3 Comments</a>
+							<h5><a href="?controller=singleblog&id=8">Honkai: Star Rail Ra Mắt Nhân Vật Mới Trong Bản Cập Nhật 3.0</a></h5>
+							<p>miHoYo vừa công bố bản cập nhật 3.0 của Honkai: Star Rail, giới thiệu nhân vật mới 5 sao với tên gọi 'Aetheria'</p>
+							<a  class="comment">3 Comments</a>
 							<div class="rgi-extra">
 								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
 								<div class="rgi-heart"><img src="public/img/icons/heart.png" alt=""></div>
@@ -167,12 +167,12 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/2.jpg">
+						<div class="rgi-thumb set-bg" data-setbg="public/img/single-blog/10.jpg">
 							<div class="cata racing">racing</div>
 						</div>
 						<div class="rgi-content">
-							<h5>Susce pulvinar metus nulla, vel facilisis sem </h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+						<h5><a href="?controller=singleblog&id=10">Sự kiện Free Fire OB42: Skin Legendary miễn phí</a></h5>
+						<p>LFree Fire sắp mang đến một sự kiện đặc biệt cực kỳ hấp dẫn trong bản cập nhật OB42 sắp tới, nơi người chơi sẽ...</p>
 							<a href="#" class="comment">3 Comments</a>
 							<div class="rgi-extra">
 								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
@@ -183,12 +183,13 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="recent-game-item">
-						<div class="rgi-thumb set-bg" data-setbg="public/img/recent-game/3.jpg">
+						<div class="rgi-thumb set-bg" data-setbg="public/img/single-blog/7.jpg">
 							<div class="cata adventure">Adventure</div>
 						</div>
 						<div class="rgi-content">
-							<h5>Suspendisse ut justo tem por, rutrum</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+						<h5><a href="?controller=singleblog&id=4">Đánh giá Baldur's Gate 3: Kiệt tác RPG thế hệ mới</a></h5>
+
+							<p>Baldur's Gate 3 xứng đáng được đánh giá 10/10 nhờ cốt truyện đầy chiều sâu, lối chơi đa dạng với vô số cách ti...</p>
 							<a href="#" class="comment">3 Comments</a>
 							<div class="rgi-extra">
 								<div class="rgi-star"><img src="public/img/icons/star.png" alt=""></div>
