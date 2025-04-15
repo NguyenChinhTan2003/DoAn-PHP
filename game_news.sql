@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 11, 2025 lúc 08:52 PM
+-- Thời gian đã tạo: Th4 15, 2025 lúc 01:16 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -80,6 +80,21 @@ INSERT INTO `comments` (`id`, `user_id`, `post_id`, `content`, `created_at`) VAL
 (31, 3, 3, 'Mình đã chơi game số 2 trong danh sách, rất hay!', '2025-04-03 03:40:00'),
 (32, 3, 3, 'Cảm ơn bạn, mình sẽ tải game số 4 về chơi thử!', '2025-04-03 03:45:00'),
 (33, 3, 3, 'Danh sách này chuẩn, mình đồng ý với top 1!', '2025-04-03 03:50:00');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -174,7 +189,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `email`, `role`) VALUES
 (1, 'tai', '$2y$10$Yr0slzFu9xy1dMs4siQke.mcRe/N2kzQl2VbYmJFl4L3U11/xSTbi', 'Võ Tấn Tài', 'votantai230@gmail.com', 'user'),
 (2, 'admin', '$2y$10$Ex2utuUGpqIuyqqG8FKP9ucFTodGql/qw42z6nshmJSh7Teqv4HlC', 'admin', 'admin@gmail.com', 'admin'),
-(3, 'user', '$2y$10$TILs0x45kV1Ay8SA9gk8XufUTWOAEdL1Bi2poJ1iBAiyVDaFM0PDW', 'user', 'user@gmail.com', 'user');
+(3, 'user', '$2y$10$TILs0x45kV1Ay8SA9gk8XufUTWOAEdL1Bi2poJ1iBAiyVDaFM0PDW', 'user', 'user@gmail.com', 'user'),
+(12, 'quangdinh0106', '$2y$10$IsBmMiEBRF/IkPYBrT5.CeuwrtDwrCRS1qmx/gS33m1EcU.X4esu.', 'Nhật Quang', 'quangdinh0106@gmail.com', 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -193,6 +209,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `post_id` (`post_id`);
+
+--
+-- Chỉ mục cho bảng `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `news`
@@ -240,6 +262,12 @@ ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
+-- AUTO_INCREMENT cho bảng `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
@@ -261,7 +289,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

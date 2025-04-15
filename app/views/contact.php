@@ -51,10 +51,10 @@
             <nav class="main-menu">
                 <ul>
                     <li><a href="?controller=home&action=index">Home</a></li>
-                    <li><a href="?controller=review&action=index">Games</a></li>
-                    <li><a href="?controller=category&action=index">Blog</a></li>
-                    <li><a href="?controller=community&action=index">Forums</a></li>
-                    <li><a href="?controller=contact&action=index">Contact</a></li>
+					<li><a href="?controller=review&action=index">Games</a></li>
+					<li><a href="?controller=category&action=index">Blog</a></li>
+					<li><a href="?controller=community&action=index">Forums</a></li>
+					<li><a href="?controller=contact&action=index">Contact</a></li>
                 </ul>
             </nav>
         </div>
