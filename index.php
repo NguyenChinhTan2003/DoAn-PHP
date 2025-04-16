@@ -65,6 +65,14 @@ if (file_exists($controllerFile)) {
 
         // Chỉ áp dụng layout admin cho các controller thuộc admin
         $adminControllers = ['News', 'Dashboard', 'Category', 'AdminContact'];
+
+        // Nếu controller thuộc admin, kiểm tra quyền
+        if (in_array(ucfirst($controllerName), $adminControllers)) {
+            if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+                die("⛔ Bạn không có quyền truy cập trang này.");
+            }
+        }
+        
         if (in_array(ucfirst($controllerName), $adminControllers)) {
             require_once __DIR__ . "/app/views/admin/layouts/main.php";
         } else {
