@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 15, 2025 lúc 01:16 PM
+-- Thời gian đã tạo: Th4 16, 2025 lúc 03:02 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -67,19 +67,19 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `user_id`, `post_id`, `content`, `created_at`) VALUES
 (19, 3, 1, 'Game này chơi hay thật, đồ họa đẹp mê!', '2025-04-01 03:15:00'),
 (20, 3, 1, 'Mình vừa tải về, cảm ơn bạn đã chia sẻ!', '2025-04-01 04:00:00'),
-(21, 3, 2, 'Hướng dẫn rất chi tiết, cảm ơn nhé!', '2025-04-02 09:00:00'),
-(22, 3, 2, 'Mình thử mẹo này và lên cấp nhanh thật!', '2025-04-02 09:30:00'),
-(23, 3, 3, 'Danh sách này hữu ích, mình sẽ thử hết!', '2025-04-03 03:00:00'),
+(21, 3, 1, 'Hướng dẫn rất chi tiết, cảm ơn nhé!', '2025-04-02 09:00:00'),
+(22, 3, 1, 'Mình thử mẹo này và lên cấp nhanh thật!', '2025-04-02 09:30:00'),
+(23, 3, 1, 'Danh sách này hữu ích, mình sẽ thử hết!', '2025-04-03 03:00:00'),
 (24, 3, 1, 'Mình cũng thích game này, chơi mượt lắm!', '2025-04-03 03:05:00'),
 (25, 3, 1, 'Có ai biết cách qua màn 3 không? Khó quá!', '2025-04-03 03:10:00'),
 (26, 3, 1, 'Game này đáng để thử, cảm ơn bạn đã giới thiệu!', '2025-04-03 03:15:00'),
 (27, 3, 1, 'Mình vừa đạt top 10, ai muốn thi đấu không?', '2025-04-03 03:20:00'),
-(28, 3, 2, 'Cảm ơn bạn, mình đã áp dụng và lên cấp 5 rồi!', '2025-04-03 03:25:00'),
-(29, 3, 2, 'Hướng dẫn hay, nhưng mình vẫn kẹt ở màn 4, huhu!', '2025-04-03 03:30:00'),
-(30, 3, 2, 'Mẹo này hiệu quả thật, mình sẽ chia sẻ thêm!', '2025-04-03 03:35:00'),
-(31, 3, 3, 'Mình đã chơi game số 2 trong danh sách, rất hay!', '2025-04-03 03:40:00'),
-(32, 3, 3, 'Cảm ơn bạn, mình sẽ tải game số 4 về chơi thử!', '2025-04-03 03:45:00'),
-(33, 3, 3, 'Danh sách này chuẩn, mình đồng ý với top 1!', '2025-04-03 03:50:00');
+(28, 3, 1, 'Cảm ơn bạn, mình đã áp dụng và lên cấp 5 rồi!', '2025-04-03 03:25:00'),
+(29, 3, 1, 'Hướng dẫn hay, nhưng mình vẫn kẹt ở màn 4, huhu!', '2025-04-03 03:30:00'),
+(30, 3, 1, 'Mẹo này hiệu quả thật, mình sẽ chia sẻ thêm!', '2025-04-03 03:35:00'),
+(31, 3, 1, 'Mình đã chơi game số 2 trong danh sách, rất hay!', '2025-04-03 03:40:00'),
+(32, 3, 1, 'Cảm ơn bạn, mình sẽ tải game số 4 về chơi thử!', '2025-04-03 03:45:00'),
+(33, 3, 1, 'Danh sách này chuẩn, mình đồng ý với top 1!', '2025-04-03 03:50:00');
 
 -- --------------------------------------------------------
 
