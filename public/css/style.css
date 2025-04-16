@@ -1611,18 +1611,24 @@ option {
 .search-section {
   /* spad class đã có padding, nhưng có thể điều chỉnh thêm nếu cần */
   /* background-color: #f8f9fa; /* Màu nền nhẹ nhàng nếu muốn tách biệt */
-  /* border-bottom: 1px solid #dee2e6; */ /* Đường kẻ phân cách nhẹ */
-  padding-top: 15px; /* Giảm padding trên nếu dùng spad pt-4 */
-  padding-bottom: 15px; /* Thêm padding dưới */
+  /* border-bottom: 1px solid #dee2e6; */
+  /* Đường kẻ phân cách nhẹ */
+  padding-top: 15px;
+  /* Giảm padding trên nếu dùng spad pt-4 */
+  padding-bottom: 15px;
+  /* Thêm padding dưới */
 }
 
 .search-form .form-control {
-  border-radius: 0.25rem 0 0 0.25rem; /* Bo tròn góc trái */
-  border-right: none; /* Bỏ viền phải của input để liền mạch với nút */
+  border-radius: 0.25rem 0 0 0.25rem;
+  /* Bo tròn góc trái */
+  border-right: none;
+  /* Bỏ viền phải của input để liền mạch với nút */
 }
 
 .search-form .btn {
-  border-radius: 0 0.25rem 0.25rem 0; /* Bo tròn góc phải */
+  border-radius: 0 0.25rem 0.25rem 0;
+  /* Bo tròn góc phải */
   /* Tùy chỉnh màu sắc nút nếu cần */
   /* background-color: #ffb320; */
   /* border-color: #ffb320; */
@@ -1630,14 +1636,17 @@ option {
 }
 
 .search-form .input-group {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm chút bóng đổ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Thêm chút bóng đổ */
 }
 
 .search-form .form-control:focus {
   /* Bỏ hiệu ứng focus mặc định nếu muốn */
   box-shadow: none;
-  border-color: #ced4da; /* Giữ màu viền khi focus */
+  border-color: #ced4da;
+  /* Giữ màu viền khi focus */
 }
+
 .search-form .btn:hover {
   /* Thêm hiệu ứng hover nếu muốn */
 }
