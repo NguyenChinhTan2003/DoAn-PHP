@@ -1,29 +1,81 @@
 <?php
+// index.php
+session_start();
 
-$url = $_GET['url'] ?? '';
-$url = rtrim($url, '/');
-$url = filter_var($url, FILTER_SANITIZE_URL);
-$url = explode('/', $url);
+// Nạp autoloader từ composer (nếu có)
+require_once __DIR__ . '/vendor/autoload.php';
 
-// Kiểm tra phần đầu tiên của URL để xác định controller
-$controllerName = isset($url[0]) && $url[0] != '' ? ucfirst($url[0]) . 'Controller' : 'homeController';
+// Nạp class Database để kết nối database
+require_once __DIR__ . '/app/config/Database.php';
 
-// Kiểm tra phần thứ hai của URL để xác định action
-$action = isset($url[1]) && $url[1] != '' ? $url[1] : 'index';
+// Khởi tạo kết nối database
+$database = new Database();
+$db = $database->getConnection();
 
-// Kiểm tra xem controller và action có tồn tại không
-if (!file_exists('app/controllers/' . $controllerName . '.php')) {
-    // Xử lý không tìm thấy controller
-    die('Controller not found');
+if ($db === null) {
+    die("Failed to connect to the database.");
 }
 
-require_once 'app/controllers/' . $controllerName . '.php';
-$controller = new $controllerName();
+// Autoloader cho controllers và models
+spl_autoload_register(function ($class_name) {
+    $paths = [
+        __DIR__ . "/app/controllers/" . $class_name . ".php",
+        __DIR__ . "/app/models/" . $class_name . ".php"
+    ];
 
-if (!method_exists($controller, $action)) {
-    // Xử lý không tìm thấy action
-    die('Action not found');
+    foreach ($paths as $file) {
+        if (file_exists($file)) {
+            require_once $file;
+            return;
+        }
+    }
+    die("❌ Không tìm thấy file: " . $class_name);
+});
+
+// Xác định controller và action từ URL
+$controllerName = $_GET['controller'] ?? '';
+$action = $_GET['action'] ?? 'index';
+
+if (empty($controllerName)) {
+    if (in_array($action, ['login', 'logout', 'register'])) {
+        $controllerName = 'login';
+    } else {
+        $controllerName = 'home';
+    }
 }
 
-// Gọi action với các tham số còn lại (nếu có)
-call_user_func_array([$controller, $action], array_slice($url, 2));
+$controllerClass = ucfirst($controllerName) . 'Controller';
+$controllerFile = __DIR__ . "/app/controllers/" . $controllerClass . ".php";
+
+if (file_exists($controllerFile)) {
+    // Khởi tạo controller và truyền $db vào constructor
+    // $controller = new $controllerClass($db);
+
+    // Khởi tạo controller, truyền DB nếu cần
+    if (method_exists($controllerClass, '__construct') && $controllerClass === 'CommunityController') {
+        $controller = new $controllerClass($db);
+    } else {
+        $controller = new $controllerClass($db);
+    }
+    
+    if (method_exists($controller, $action)) {
+        ob_start();
+        $controller->$action();
+        $content = ob_get_clean();
+
+        // Chỉ áp dụng layout admin cho các controller thuộc admin
+        $adminControllers = ['News', 'Dashboard', 'Category', 'AdminContact'];
+        if (in_array(ucfirst($controllerName), $adminControllers)) {
+            require_once __DIR__ . "/app/views/admin/layouts/main.php";
+        } else {
+            echo $content;
+        }
+    } else {
+        http_response_code(404);
+        die("❌ Action `$action` không tồn tại trong $controllerClass");
+    }
+} else {
+    http_response_code(404);
+    die("❌ Controller `$controllerClass` không tồn tại");
+}
+?>

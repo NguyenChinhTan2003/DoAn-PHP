@@ -1,0 +1,104 @@
+Về đăng nhập/đăng ký (Nhớ đăng ký trước khi đăng nhập):
+- Tài khoản Admin:
+admin
+123
+- Tài khoản User:
+user
+123
+----------------------------------------------------------------
+Composer (Lấy ID đăng nhập vô FB + GG)
+Tải và cài đặt Composer từ trang chính thức: getcomposer.org.
+Cài về để đường dẫn vô xampp/php/php.exe (Cái này hình như nó tự động chọn sẵn cho).
+Check version trong CMD: composer -v
+Xong thì vô project mở Terminal:
++ composer require google/apiclient:2.18
++ composer require guzzlehttp/guzzle:^7.0
++ composer install
+
+Một vài lỗi là khác phiên bản php
+Mọi người vô check phiên bản nhé: 8.2.12
+Nếu dưới phiên bản 8.1 thì lên web tải lại nha
+
+Trong trường hợp cài xong mà bị lỗi Warning ở thư mục vendor/composer/autoload_real.php dòng 41:
++ Xóa folder vendor
++ composer install
+
+Do chưa có Domain nên là dùng đường dẫn tuyệt đối. Mọi người chuyển folder DoAn-PHP ra ngoài nha:
+xampp/htdocs/DoAn-PHP
+
+Lỗi merge phpmailer.php:
+Tắt hết file vendor thay đổi
+Dùng lệnh sau để down
+composer require phpmailer/phpmailer
+----------------------------------------------------------------
+Các code về DB của PHP để đây nha
+
+Create database Game_News
+
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user'
+);
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE news (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    category_id INT NOT NULL,
+    image VARCHAR(255) NULL, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id),
+    views INT(11) DEFAULT 0
+);
+
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,  -- Người tạo bài viết
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id)  -- Liên kết với bảng người dùng
+);
+
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    post_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (post_id) REFERENCES posts(id)
+);
+
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL, 
+    message TEXT NOT NULL, 
+    is_read BOOLEAN DEFAULT FALSE, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    FOREIGN KEY (user_id) REFERENCES user(id) 
+);
+
+
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at DATETIME
+);

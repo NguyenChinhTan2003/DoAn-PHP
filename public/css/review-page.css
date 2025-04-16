@@ -1,0 +1,126 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-md-6 {
+    padding: 0 15px;
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Page info section */
+.page-info-section {
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.pi-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.pi-content p {
+    font-size: 16px;
+}
+
+/* Review page section (2 cột lớn) */
+.review-page {
+    padding: 50px 0;
+}
+
+.review-item {
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-cover {
+    position: relative;
+    height: 300px; /* Chiều cao hình ảnh cho phần trên */
+    background-size: cover;
+    background-position: center;
+}
+
+.score {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    background: #f1c40f; /* Màu vàng giống trong hình */
+}
+
+.review-text {
+    padding: 20px;
+}
+
+.review-text h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px; /* Tiêu đề lớn giống phần Game Reviews */
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.rating i {
+    color: #f1c40f; /* Màu vàng cho sao */
+    font-size: 16px;
+}
+
+.rating i.is-fade {
+    color: #ccc; /* Màu xám cho sao không được chọn */
+}
+
+.review-text p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
